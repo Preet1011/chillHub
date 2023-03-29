@@ -1,0 +1,52 @@
+#home{
+    width:87vw;
+    height: 90vh;
+    margin-left: 13%;
+    background-color: rgb(222, 222, 222);
+    padding-left: 4%;
+    padding-top:2%;
+}
+#post{
+    width:40vw;
+    height:80vh;
+    border-radius: 2%;
+    box-shadow: 3px 3px 5px 5px grey;
+    background-color: black;
+}
+#dp{
+    width:60px;
+    height: 60px;
+    margin-right: .7%;
+    border-radius: 50px;
+    background-color: white;
+}
+#post_header{
+    padding: 1%;
+    height: 8vh;
+    display: flex;
+    border-bottom: 2px solid white;
+}
+#name{
+    color:white;
+    width: 90%;
+    font-weight: bold;
+    font-size: 20px;
+}
+#name span{
+    color:white;
+    width: 90%;
+    font-size: 15px;
+}
+#img{
+    width:40vw;
+    height: 62vh;
+}
+#post_footer span {
+    margin: 1% 2% 2% 1%;
+}
+
+#blue{
+    width:1.5vw;
+    height: 2vh;
+    border-radius: 50px;
+}
