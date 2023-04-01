@@ -6,7 +6,7 @@ const Notices = () => {
       <div id = "notice_board">
         <h3><b>Notices</b></h3>
         <ul>
-          <li>Tyagi chutiya hain</li>
+          <li>Tyagi </li>
         </ul>
       </div>
     </div>
