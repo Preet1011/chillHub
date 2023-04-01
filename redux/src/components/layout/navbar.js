@@ -8,8 +8,6 @@ export default function Navbar() {
     <div id="navbar">
     <Logo/>
       <a href='home'>
-      
-      
       </a>
       
       <h2>

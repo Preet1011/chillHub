@@ -3,9 +3,8 @@ import "./logo.css"
 
 const Logo = () => {
   return (
-    <div className='hub'>
-        <span>Chill</span>
-        <span>Hub</span>
+    <div id='hub'>
+        <span >Chill<span id="hu">Hub</span></span>
      </div>
   )
 }
