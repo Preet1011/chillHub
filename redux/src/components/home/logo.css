@@ -1,0 +1,23 @@
+.hub {
+    display: block;
+    text-decoration: none;
+    color:white;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 3.5vw;
+    position: absolute;
+    margin-top: 5%;
+    left: 80%;
+    margin-left: 2vw;
+    
+    transform: translate(-50%, -50%);
+  }
+  
+  .hub span:nth-child(2) {
+    background: #FF9900;
+    color: #000000;
+    border-radius: 1vw;
+    padding: 0 1vw 1vw 1vw;
+    display: inline-block;
+    margin-left: 1;
+  }  

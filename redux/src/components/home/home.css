@@ -1,15 +1,17 @@
 #home{
-    width:87vw;
+    width:48vw;
     height: 90vh;
     margin-left: 13%;
     background-color: rgb(222, 222, 222);
     padding-left: 4%;
     padding-top:2%;
 }
+
 #post{
     width:40vw;
     height:80vh;
     border-radius: 2%;
+    margin-right: 40vw;
     box-shadow: 3px 3px 5px 5px grey;
     background-color: black;
 }
@@ -49,4 +51,17 @@
     width:1.5vw;
     height: 2vh;
     border-radius: 50px;
+}
+
+#Notice_board{
+    position: fixed;
+    width:30vw;
+    height: 60vh;
+    margin-left: 50vw;
+    margin-top: -450px;
+    border-radius: 10px;
+
+    
+    background-color: rgb(211, 48, 48);
+
 }

@@ -1,15 +1,15 @@
 import React from 'react';
 import { a } from 'react-router-dom';
+import Logo from '../home/logo';
 import "./navbar.css";
 export default function Navbar() {
   return (
-    
+  
     <div id="navbar">
+    <Logo/>
       <a href='home'>
-      <div class="hub">
-        <span>Chill</span>
-        <span>Hub</span>
-      </div>
+      
+      
       </a>
       
       <h2>

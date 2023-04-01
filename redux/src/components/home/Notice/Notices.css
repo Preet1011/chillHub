@@ -1,0 +1,11 @@
+
+#notice_board{
+    position: fixed;
+    width:37vw;
+    height: 90vh;
+    margin-left: 63vw;
+    margin-bottom: 30px;
+    background-color: rgb(211, 48, 48);
+    padding-left: 4%;
+    padding-top:2%;
+}

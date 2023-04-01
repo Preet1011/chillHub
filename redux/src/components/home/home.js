@@ -17,6 +17,8 @@ export default function Home() {
                 <span> share</span>
             </div>
         </div>
+        <div id = "Notice_board">notice</div>
+        
     </div>
   )
 }

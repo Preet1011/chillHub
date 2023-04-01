@@ -10,6 +10,9 @@ function App() {
         <Navbar/>
         <Stories/>
         <Home/>
+      
+        
+        
         {/* <BrowserRouter>
           <Routes>
             <Route path="/" ></Route>
