@@ -11,7 +11,14 @@ export default function Stories() {
         <div id="story"></div>
 
         <div id="story"></div>
+        <div id="story"></div>
+        <div id="story"></div>
 
+        <div id="story"></div>
+
+        <div id="story"></div>
+
+        <div id="story"></div>
     </div>
   )
 }

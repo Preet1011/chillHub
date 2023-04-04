@@ -1,9 +1,17 @@
 import React from 'react'
 import "./home.css";
+import Navbar from '../layout/navbar';
+import Stories from './stories';
+import Notices from './Notice/Notices';
 export default function Home() {
   return (
     <div id="home">
+        <Navbar/>
+        <Stories/>
+        <Notices/>
+        <div id='extra_div'></div>
         <div id="post">
+            
             <div id="post_header">
               <div id="dp"></div>
               <div id="name">Himanshu Sharma<img id="blue" src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Eo_circle_light-blue_checkmark.svg/640px-Eo_circle_light-blue_checkmark.svg.png'></img><br/><span>Admin</span></div>

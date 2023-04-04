@@ -1,0 +1,51 @@
+.login-container {
+    color:white;
+    font-weight: bold;
+    width: 30%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 99.5vh;
+    background-color: black;
+    border: 1px solid black;
+  }
+  #login-container{
+    display: flex;
+
+  }
+  #login-info{
+    width:70%;
+    background-image: url("https://img-new.cgtrader.com/items/977061/03fbddf5d0/social-media-icons-3d-3d-model-low-poly-obj-3ds-fbx-c4d-stl.jpg");
+    background-size: cover;
+
+  }
+  
+  .input-field {
+    width: 300px;
+    height: 30px;
+    margin: 10px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .submit-button {
+    width: 100px;
+    height: 30px;
+    margin: 20px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0077b6;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .submit-button:hover {
+    background-color: #023e8a;
+  }
+  a{
+    text-decoration: none;
+    color: white;
+  }

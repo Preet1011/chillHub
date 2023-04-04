@@ -1,9 +1,10 @@
 #stories{
     height: 10vh;
-    width: 87vw;
+    width: 58.5vw;
     margin-left: 13%;
     background: #000;
     position:fixed;
+    flex-wrap: wrap;
     margin-top: 90vh;
     padding-top: .7%;
     padding-left: .7%;
