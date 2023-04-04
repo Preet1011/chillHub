@@ -7,6 +7,7 @@ import Notices from './components/home/Notice/Notices'
 import Login from './components/Login/Login';
 import Register from './components/register/Register';
 import Messages from './components/messages/messages';
+import Profile from './components/profile/Profile';
 function App() {
   return (
     <div className="App">
@@ -16,6 +17,7 @@ function App() {
             <Route path="/login" element={<Login/>} ></Route>
             <Route path="/messages" element={<Messages/>} ></Route>
             <Route path="/register" element={<Register/>} ></Route>
+            <Route path="/profile" element={<Profile/>}> </Route>
           </Routes>
         </BrowserRouter>
     </div>

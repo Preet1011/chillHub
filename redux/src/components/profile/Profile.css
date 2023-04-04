@@ -1,0 +1,64 @@
+
+
+#whole{
+    background-color: black;
+    height: 100vh;
+}
+
+#profile_card{
+    width: 10vw;
+    height: 35vh;
+    display: flex;
+
+}
+
+#profile_pic{
+    height: 22vh;
+    margin-left: 35vw;
+    margin-top: 7vh;
+    border-radius:50px ;
+
+}
+.text{
+
+    color: rgb(253, 254, 255);
+    
+
+}
+#username{
+    height: 20px;
+    padding-left: 1vw;   
+    padding-top: 10vh;
+    margin-top: 1vh;
+   
+
+}
+#edit_profile{
+    height: 3vh; 
+     width: 200px; 
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    margin-top: 11vh;
+    margin-left: 2vw;
+    background-color: aliceblue;
+    color: black;
+    border-radius:10px ;
+   
+
+}
+
+#highlights{
+    
+    background-color: #fd5b5b;
+    display: flex;
+    position: fixed;
+
+}
+#light{
+    width:60px;
+    height: 60px;
+    border-radius: 50px;
+    background-color: aquamarine;
+    
+}
+
