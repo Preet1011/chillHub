@@ -6,6 +6,7 @@ import Navbar from './components/layout/navbar';
 import Notices from './components/home/Notice/Notices'
 import Login from './components/Login/Login';
 import Register from './components/register/Register';
+import Messages from './components/messages/messages';
 function App() {
   return (
     <div className="App">
@@ -13,6 +14,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home/>} ></Route>
             <Route path="/login" element={<Login/>} ></Route>
+            <Route path="/messages" element={<Messages/>} ></Route>
             <Route path="/register" element={<Register/>} ></Route>
           </Routes>
         </BrowserRouter>
