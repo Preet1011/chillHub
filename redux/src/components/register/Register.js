@@ -75,7 +75,7 @@ function Register() {
         <td colSpan={2}><button type="submit" className="submit-button">Register</button></td></tr>
         </table>
       </form>
-     Already have account ?<Link to="/login"><b>Login</b></Link>
+     Already have account ?<Link to="/login"id="a"><b>Login</b></Link>
     </div>
     </div>
   );

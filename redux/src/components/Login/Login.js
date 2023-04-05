@@ -51,7 +51,7 @@ function Login() {
         </label><br/>
         <button type="submit" className="submit-button">Submit</button>
       </form>
-     Don't have account ? <Link to="/register"><b>Register</b></Link>
+     Don't have account ? <Link to="/register"id="a"><b>Register</b></Link>
     </div>
     </div>
   );

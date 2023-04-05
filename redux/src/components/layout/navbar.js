@@ -6,8 +6,8 @@ export default function Navbar() {
   return (
   
     <div id="navbar">
-    <Logo/>
-      <a href='home'>
+    
+      <a href='' style={{color:"white"}}><Logo/>
       </a>
       
       <h2>

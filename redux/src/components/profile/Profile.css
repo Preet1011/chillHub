@@ -11,7 +11,13 @@
     display: flex;
 
 }
-
+#profile_btn{
+    width: 10vw;
+    height: 35vh;
+    display: flex;
+    margin-left: 50vw;
+    
+}
 #profile_pic{
     height: 22vh;
     margin-left: 35vw;
@@ -25,6 +31,16 @@
     
 
 }
+.follow{
+    margin-right: 2vw;
+}
+#profile_follow{
+    display: flex;
+    color:white;
+    margin-left: 47vw;
+    text-align: center;
+    margin-top:-18vh
+}
 #username{
     height: 20px;
     padding-left: 1vw;   
@@ -33,17 +49,14 @@
    
 
 }
-#edit_profile{
-    height: 3vh; 
-     width: 200px; 
-    padding-top: 1vh;
-    padding-bottom: 1vh;
-    margin-top: 11vh;
-    margin-left: 2vw;
-    background-color: aliceblue;
+a{
     color: black;
-    border-radius:10px ;
-   
+}
+#edit_profile{
+    height: 3vh;
+    width: 200px;
+    border-radius: 25px;
+    margin-right: 2vw;
 
 }
 
