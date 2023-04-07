@@ -14,7 +14,8 @@ const Post = () => {
 
         </div> 
         
-        <Home/>
+        <div id='opacity'><Home/>
+        </div>
     </div>  
   )
 }

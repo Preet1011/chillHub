@@ -18,7 +18,9 @@ function Profile() {
                 <div className='follow'><h3>0</h3><h4>following</h4></div>
             </div>
             <div id="profile_btn">
-            <button id='edit_profile'>Edit </button>
+           
+            <button id='edit_profile'> <a href='edit'>Edit
+            </a> </button>
             <button id='edit_profile' ><a href='messages'>Message</a></button>
             </div>
 
