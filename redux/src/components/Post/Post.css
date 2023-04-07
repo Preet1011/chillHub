@@ -1,0 +1,36 @@
+#post_cointainer{
+    width: 45vw;
+    height: 55vh;
+    background-color: rgb(33, 37, 40);
+    position: fixed;
+    margin-left: 20vw ;
+    margin-top: 20vh;
+    border-radius: 30px;
+}
+
+#post_head{
+
+    padding-left: 13.5vw;
+    margin-top: 3vh;
+    font-size: 20px;
+    font-weight: 700;
+}
+#post_img{
+    height: 20vh;
+    width: 20vh;
+    margin-left: 18vw;
+    margin-top: 10vh;
+
+}
+#but{
+    height: 0vh;
+    width: 15.5vw;
+    height: 5vh;
+    margin-left: 15vw;
+    margin-top: 2vh;
+    background-color: #3578E5;; 
+    border-radius: 15px;
+    border: solid purple;
+    font-weight: 600;
+    font-size: large;
+}

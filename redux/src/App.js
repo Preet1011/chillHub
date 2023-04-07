@@ -8,6 +8,10 @@ import Login from './components/Login/Login';
 import Register from './components/register/Register';
 import Messages from './components/messages/messages';
 import Profile from './components/profile/Profile';
+import Notification from './components/notification/Notification';
+import Search from './components/search/Search';
+import Logo from './components/home/logo';
+import Post from './components/Post/Post';
 function App() {
   return (
     <div className="App">
@@ -18,6 +22,12 @@ function App() {
             <Route path="/messages" element={<Messages/>} ></Route>
             <Route path="/register" element={<Register/>} ></Route>
             <Route path="/profile" element={<Profile/>}> </Route>
+            <Route path="/notification" element={<Notification/>}> </Route>
+            <Route path="/search" element={<Search/>}> </Route>
+            <Route path="/logo" element={<Home/>} ></Route>
+            <Route path="/post" element={<Post/>} ></Route>
+
+
           </Routes>
         </BrowserRouter>
     </div>

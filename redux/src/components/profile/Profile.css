@@ -30,7 +30,7 @@
     color: rgb(253, 254, 255);
     
 
-}
+}   
 .follow{
     margin-right: 2vw;
 }
@@ -67,7 +67,7 @@ a{
     position: fixed;
 
 }
-#light{
+#light{ 
     width:60px;
     height: 60px;
     border-radius: 50px;

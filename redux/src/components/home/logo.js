@@ -3,9 +3,12 @@ import "./logo.css"
 
 const Logo = () => {
   return (
-    <div id='hub'>
+    <a href="logo">
+      <div id='hub'>
         <span >Chill<span id="hu">Hub</span></span>
-     </div>
+      </div>
+    </a>
+  
   )
 }
 
