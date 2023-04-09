@@ -5,8 +5,8 @@ import './Search.css'
 
 const Search = () => {
   return (
-    <div>
-    <Navbar/>
+    <div id='searchwhole'>
+    
     <div id="searchbody">
         <h1 className="search_h1">Search</h1>
         <input type='text'defaultValue={"search"} id='inputbutton'></input>
@@ -41,7 +41,6 @@ const Search = () => {
         </div>
 
     </div>
-    <Home/>
     </div>
   )
 }

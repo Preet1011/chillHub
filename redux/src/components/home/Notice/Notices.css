@@ -1,10 +1,11 @@
 #notice{
     position: fixed;
     top:0;
-    width:35vw;
+    width:30vw;
     height: 100vh;
     background-color:#000;
-    margin-left: 72vw;
+    margin-left: 76vw;
+    border-left: solid 1px rgb(47, 46, 46);
     
 }
 #notice_board{

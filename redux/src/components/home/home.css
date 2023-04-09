@@ -4,7 +4,7 @@
     
     overscroll-behavior-y:auto;
     /* margin-left: 13%; */
-    background-color: #f2f2f2;
+    background-color: #000000;
     
     background-attachment: fixed;
 }
@@ -12,13 +12,13 @@
     height: 2vh;
 }
 #post{
-    margin-left: 17%;
+    margin-left: 32vw;
     margin-bottom: 10%;
-    width:40vw;
+    width:25vw;
     height:80vh;
     border-radius: 2%;
     
-    box-shadow: 3px 3px 5px 5px grey;
+    
     background-color: black;
 }
 #dp{
@@ -32,7 +32,7 @@
     padding: 1%;
     height: 8vh;
     display: flex;
-    border-bottom: 2px solid white;
+    
 }
 #name{
     color:white;
@@ -46,8 +46,9 @@
     font-size: 15px;
 }
 #img{
-    width:40vw;
+    width:29vw;
     height: 62vh;
+    border: 2px solid rgb(111, 111, 111);
 }
 #post_footer span {
     margin: 1% 2% 2% 1%;

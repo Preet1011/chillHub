@@ -6,7 +6,7 @@ import Home from '../home/home'
 const Notification = () => {
   return (
     <div id="whole" >
-        <Navbar/>
+  
         <div id="notifybody" >
             <h1>NOTIFICATIONS</h1>
             <h3 className='notify_head'>Follow requests</h3>
@@ -41,7 +41,8 @@ const Notification = () => {
         </div>
 
 
-        <Home/>
+      
+        
 
     </div>
   )
