@@ -1,0 +1,126 @@
+
+
+/* #whole{
+    background-color: black;
+    height: 100vh;
+} */
+#profile_header{
+    background: #000;
+    height: 35vh;
+}
+#profile_card{
+    width: 10vw;
+    height: 35vh;
+    display: flex;
+
+}
+#profile_btn{
+    width: 10vw;
+    height: 35vh;
+    display: flex;
+    margin-left: 50vw;
+    
+}
+#profile_pic{
+    height: 22vh;
+    margin-left: 35vw;
+    margin-top: 7vh;
+    border-radius:50px ;
+
+}
+.text{
+
+    color: rgb(253, 254, 255);
+    
+
+}   
+.follow{
+    margin-right: 2vw;
+}
+#profile_follow{
+    display: flex;
+    color:white;
+    margin-left: 47vw;
+    text-align: center;
+    margin-top:-18vh
+}
+#username{
+    height: 20px;
+    padding-left: 1vw;   
+    padding-top: 10vh;
+    margin-top: 1vh;
+   
+
+}
+a{
+    color: black;
+}
+#edit_profile{
+    height: 3vh;
+    width: 200px;
+    border-radius: 25px;
+    margin-right: 2vw;
+
+}
+
+#highlights{
+    
+    background-color: #fd5b5b;
+    display: flex;
+    position: fixed;
+
+}
+#light{ 
+    width:60px;
+    height: 60px;
+    border-radius: 50px;
+    background-color: aquamarine;
+    
+}
+#profile_story{
+    width:80px;
+    height: 80px;
+    margin-left: 2vw;
+    margin-right: .7%;
+    border-radius: 50px;
+    background-color: white;
+    margin-bottom: 10%;
+}
+#profile_stories{
+    height: 15vh;
+    width: 100.5vw;
+    margin-left: 12vw;
+    background: black;
+    
+    flex-wrap: wrap;
+    margin-bottom: 20%;
+    padding-top: .7%;
+    padding-left: 15%;
+    
+    display: flex;
+    margin-top: 0vh;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+#pp_c{
+    background-color: black;
+    height: auto;
+    width: 87vw;
+    margin-top: -20%;
+    border: solid grey 2px;
+    margin-left: 12vw;
+    padding-top: 6vh;
+    display: flex;
+    
+    
+}
+#pp{
+    /* display: flex; */
+    height: 30vh;
+    width: 25vw;
+    margin-left: 5vw;
+    background-color: #fd5b5b;
+    
+    
+    
+}

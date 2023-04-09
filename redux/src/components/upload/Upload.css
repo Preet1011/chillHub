@@ -1,0 +1,36 @@
+#uploadcontainer{
+    position: fixed;
+    background-color: #ffffff;
+    height: 35vh;
+    width: 40vw;
+    margin-left:33vw ;
+    margin-top: 33vh;
+    border-radius: 20px;
+}
+
+#uploadimg{
+    height: 12vh;
+    width: 10vw;
+    margin-top: 1vh;
+    margin-left: 14.3vw;
+    border-radius: 10px;
+}
+#headupload{
+    color: black;
+    margin-top: 1vh;
+    margin-left: 1.8vw;
+}
+#removebut{
+    margin-left: 13vw;
+    margin-top: 1vh;
+}
+#cancel{
+    color: rgb(19, 33, 221);
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-left: 5vw;
+
+
+
+}

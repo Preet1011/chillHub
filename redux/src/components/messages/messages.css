@@ -1,0 +1,43 @@
+#messages{
+    width:60vw;
+    height:83vh;
+    margin-left: 27%;
+    border: 1px solid grey;
+    color:black;
+    background-color: white;
+}
+
+#extra_div{
+    height: 10vh;
+}
+#table{
+    text-align: left;
+    
+
+}
+.message_list{
+    width: 18vw;
+    height: 10vh;
+    border-right: 1px solid grey;
+    border-bottom: 1px solid grey;
+    
+}
+.message_name{
+    
+    width:42vw;
+    border-bottom: 1px solid grey;
+    text-align: center;
+}
+#mes{
+    opacity: .1;
+}
+#person{
+    width:18vw;
+    height: 8vh;
+    display: flex;
+}
+h3{
+    margin-left: 1.4vw;
+}
+
+

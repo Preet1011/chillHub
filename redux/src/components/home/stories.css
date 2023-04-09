@@ -1,0 +1,29 @@
+#stories{
+    height: 10vh;
+    width: 58.5vw;
+    margin-left: 17.1vw;
+    background: #000;
+    position:fixed;
+    flex-wrap: wrap;
+    margin-top: 90vh;
+    padding-top: .7%;
+    padding-left: 8%;
+    display: flex;
+    
+
+}
+#story{
+    width:60px;
+    height: 60px;
+    margin-right: .7%;
+    border-radius: 50px;
+    background-color: white;
+    
+}
+#story img{
+    width:60px;
+    height: 60px;
+    margin-right: .7%;
+    border-radius: 50px;
+    border: 1px solid black;
+}

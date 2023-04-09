@@ -1,0 +1,63 @@
+#home{
+    width: 97vw;
+    height: auto;
+    
+    overscroll-behavior-y:auto;
+    /* margin-left: 13%; */
+    background-color: #000000;
+    
+    background-attachment: fixed;
+}
+#extra_div{
+    height: 2vh;
+}
+#post{
+    margin-left: 32vw;
+    margin-bottom: 10%;
+    width:25vw;
+    height:80vh;
+    border-radius: 2%;
+    
+    
+    background-color: black;
+}
+#dp{
+    width:60px;
+    height: 60px;
+    margin-right: .7%;
+    border-radius: 50px;
+    background-color: white;
+}
+#post_header{
+    padding: 1%;
+    height: 8vh;
+    display: flex;
+    
+}
+#name{
+    color:white;
+    width: 90%;
+    font-weight: bold;
+    font-size: 20px;
+}
+#name span{
+    color:white;
+    width: 90%;
+    font-size: 15px;
+}
+#img{
+    width:29vw;
+    height: 62vh;
+    border: 2px solid rgb(111, 111, 111);
+}
+#post_footer span {
+    margin: 1% 2% 2% 1%;
+}
+
+#blue{
+    width:1.5vw;
+    height: 2vh;
+    border-radius: 50px;
+}
+
+

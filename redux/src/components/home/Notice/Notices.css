@@ -1,0 +1,19 @@
+#notice{
+    position: fixed;
+    top:0;
+    width:30vw;
+    height: 100vh;
+    background-color:#000;
+    margin-left: 76vw;
+    border-left: solid 1px rgb(47, 46, 46);
+    
+}
+#notice_board{
+    top: 20px;
+    width:18vw;
+    color:white;
+    font-weight: bold;
+    height: 40vh;
+    margin:17vh 4.5vw;
+    border-radius: 20px;
+}

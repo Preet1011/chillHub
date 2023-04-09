@@ -1,0 +1,151 @@
+#navbar{
+    width: 17vw;
+    height: 100vh;
+    border:1px solid black;
+    background: black;
+    /* margin-top: 3%; */
+    position:fixed;
+    border-right: rgb(47, 46, 46) solid 1px;
+    
+}
+#navbar h2 a{
+    text-decoration: none;
+    color:white;
+    
+}
+h2{
+    margin-top: 40%;
+    margin-left: 15%;
+}
+
+html {
+    height: 100%;
+  }
+  
+  body {
+    background: white;
+    color: #ffffff;
+    margin: 0;
+    min-height: 100%;
+    height: 100%;
+    position: relative;
+  }
+  
+  .hub {
+    display: block;
+    text-decoration: none;
+    color:white;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 3.5vw;
+    position: absolute;
+    margin-top: 5%;
+    left: 80%;
+    
+    
+    transform: translate(-50%, -50%);
+  }
+  
+  .hub span:nth-child(2) {
+    background: #FF9900;
+    color: #000000;
+    border-radius: 1vw;
+    padding: 0 1vw 1vw 1vw;
+    display: inline-block;
+  }  
+
+  .navbarbut{
+    margin-top: 40px;
+    background-color: #000000;
+    color: #ffffff;
+    height: 42px;
+    width: 190px;
+    font-size: 25px;
+    border-radius: 30px;
+    margin-left: 10px;
+    justify-content: left;
+    padding-left: 30px;
+    display: flex;
+    padding-top: 9px;
+ 
+  
+    
+    
+  }
+  .navbarbut:hover{
+    background-color: #191919;
+    transition-delay:0ms;
+    padding-left: 30px;
+    padding-right: 20px;
+  }
+
+  #homeimg{
+    height:35px ;
+    margin-left: 95px;
+    border-radius: 50px;
+    margin-bottom: 3px;
+    border: solid rgb(36, 36, 36) .1px;
+
+
+  }
+  #msgimg{
+    height:35px ;
+    margin-left: 50px;
+    border-radius: 50px;
+    border: solid .5px rgb(0, 0, 0);
+
+
+  }
+  #notiimg{
+    height:35px ;
+    margin-left: 16px;
+    border-radius: 50px;
+    border: solid .5px rgb(0, 0, 0);
+
+
+  }
+  #searchimg{
+    height:35px ;
+    margin-left: 79.5px;
+    border-radius: 50px;
+    border: solid .5px rgb(0, 0, 0);
+    background-color: rgb(0, 0, 0);
+
+
+  }
+  #profileimg{
+    height:35px ;
+    margin-left: 79.5px;
+    border-radius: 50px;
+    border: solid .5px rgb(0, 0, 0);
+    
+    background-color: #409bd8;
+    box-shadow: 1px 0px 10px 1px rgb(5, 164, 233);
+
+  }
+
+  #notifybody{
+    
+    background-color: rgb(87, 87, 87);
+    color: rgb(255, 255, 255);
+    position: relative;
+    margin-left: 18vw;
+    margin-top: 1px;
+    
+    width: 30vw;
+    height: 85vh;
+    border-radius: 20px;
+  
+   
+}
+h1{
+    padding-left: 7vw ;
+}
+
+.notify_head{
+    padding-left: 8vh ;
+    color: #FF9900;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+

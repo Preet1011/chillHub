@@ -1,0 +1,22 @@
+#notifybody{
+    background-color: rgb(87, 87, 87);
+    color: rgb(255, 255, 255);
+    position: fixed;
+    margin-left: 13vw;
+    margin-top: 3vh;
+    width: 30vw;
+    height: 85vh;
+    border-radius: 20px;
+   
+}
+h1{
+    padding-left: 7vw ;
+}
+
+.notify_head{
+    padding-left: 8vh ;
+    color: #FF9900;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
