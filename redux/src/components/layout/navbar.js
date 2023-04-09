@@ -3,14 +3,27 @@ import { a } from 'react-router-dom';
 import Logo from '../home/logo';
 import "./navbar.css";
 import { useState } from 'react';
+import Notification from '../notification/Notification';
+import Search from '../search/Search';
 export default function Navbar() {
   const[isOpen,setopen]= useState(false);
+
+  function Notificatio(){
+   
+      let a=document.getElementById("whole").style.display;
+      if(a=="none"){
+        document.getElementById("whole").style.display="inline-block";
+      }
+      else{
+        document.getElementById("whole").style.display="none";
+      }
+  }
   
     
   return (
-  
+   
     <div id="navbar">
-    
+   
       <a href='' style={{color:"white"}}><Logo/>
       </a>
       
@@ -23,7 +36,7 @@ export default function Navbar() {
         Messages
         <img  src='https://i.pinimg.com/originals/d6/26/2f/d6262f6c8cf32db3ae992ed1489e503f.png' id='msgimg'></img>
       </div>
-      <div className='navbarbut'>
+      <div className='navbarbut' onClick={Notificatio}>
         Notifications
         <img  src='https://png.pngtree.com/png-vector/20190321/ourmid/pngtree-vector-notification-icon-png-image_855007.jpg' id='notiimg'></img>
       </div>
@@ -35,7 +48,10 @@ export default function Navbar() {
         Profile
         <img  src='https://i0.wp.com/hindimeinfo.com/wp-content/uploads/2023/03/shree-ram-dp-00013-91.png?resize=400%2C400&ssl=1' id='profileimg'></img>
       </div>
-     
+
+      <search/>
+      <Notification/>
+      
 
     </div>
     

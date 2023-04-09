@@ -5,7 +5,8 @@ import Stories from './stories';
 import Notices from './Notice/Notices';
 import Notification from '../notification/Notification';
 export default function Home() {
-    const[isOpen,setopen]= useState(false);
+    
+
 
 
 
@@ -141,42 +142,5 @@ export default function Home() {
     </div>
   )
 
-  if(isOpen){
-    return(
-        <div id="notifybody" >
-        <h1>NOTIFICATIONS</h1>
-        <h3 className='notify_head'>Follow requests</h3>
-        <ul id=" follow_request">
-            <li>Preet tyagi follow you</li>
-            <li>Montu just follow you</li>
-            <li>Montu just follow you</li>
-            <li>Montu just follow you</li>
-            <li>Montu just follow you</li>
-            <li>Montu just follow you</li>
-
-        
-        </ul>
-        <h3 className='notify_head'> All Notifications </h3>
-        <ul id="all">
-           
-            <li>parsa like your post</li>
-            <li>montu commented on you post</li>
-            <li>parsa like your post</li>
-            <li>montu commented on you post</li>
-            <li>parsa like your post</li>
-            <li>montu commented on you post</li>
-            <li>parsa like your post</li>
-            
-            
-
-        </ul>
-
-
-     
-    
-    </div>
-    
-    
-    )
-    }
 }
+
