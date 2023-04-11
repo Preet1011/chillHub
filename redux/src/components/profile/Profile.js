@@ -3,8 +3,19 @@ import "./Profile.css"
 import Navbar from '../layout/navbar'
 
 function Profile() {
+    function editpro(){
+   
+        let a=document.getElementById("edit_whole").style.display;
+        if(a=="none"){
+          document.getElementById("edit_whole").style.display="inline-block";
+          
+        }
+        else{
+          document.getElementById("edit_whole").style.display="none";
+        }
+        }
     return (
-        <div >
+        <div  >
             <Navbar/>
             <div id='profile_container'>
                 <div id="profile_card">
@@ -20,8 +31,8 @@ function Profile() {
                 </div>
                 <div id="profile_btn">
             
-                <button id='edit_profile'> <a href='edit'>Edit
-                </a> </button>
+                <div id='edit_profile' onClick={editpro}> Edit
+                </div>
                 <button id='edit_profile' ><a href='messages'>Message</a></button>
                 </div>
             </div>

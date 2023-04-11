@@ -14,6 +14,7 @@ import Logo from './components/home/logo';
 import Post from './components/Post/Post';
 import Edit from './components/Edit/Edit.js';
 import Upload from './components/upload/Upload';
+import More from './components/More/More';
 function App() {
   return (
     <div className="App">
@@ -30,6 +31,7 @@ function App() {
             <Route path="/post" element={<Post/>} ></Route>
             <Route path="/edit" element={<Edit/>} ></Route>
             <Route path="/upload" element={<Upload/>} ></Route>
+            <Route path="/more" element={<More/>} ></Route>
 
 
           </Routes>

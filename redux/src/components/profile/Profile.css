@@ -1,9 +1,9 @@
 
 
-/* #whole{
-    background-color: black;
-    height: 100vh;
-} */
+#profile_container{
+    background-color: #000;
+    height: 38vh;
+}
 #profile_header{
     background: #000;
     height: 35vh;

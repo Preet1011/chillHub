@@ -4,7 +4,7 @@ import './Edit.css'
 
 const Edit = () => {
   return (
-    <div >
+    <div id='edit_whole' >
     
     
 
@@ -78,7 +78,7 @@ const Edit = () => {
         </div>
 
         
-        <Navbar/>
+        
     </div>
    
   )

@@ -8,46 +8,53 @@
     
     background-attachment: fixed;
 }
-#extra_div{
-    height: 2vh;
-}
+
 #post{
-    margin-left: 32vw;
-    margin-bottom: 10%;
-    width:25vw;
-    height:80vh;
+    margin-top:-25px ;
+    
+    margin-left: 33vw;
+    
+    width:27.16vw;
+    height:90vh;
     border-radius: 2%;
     
     
-    background-color: black;
+    background-color: rgb(0, 0, 0);
 }
 #dp{
-    width:60px;
-    height: 60px;
+    width:45px;
+    height: 40px;
     margin-right: .7%;
     border-radius: 50px;
     background-color: white;
+    margin-top: 8px;
+    margin-right: 15px;
 }
 #post_header{
     padding: 1%;
     height: 8vh;
+    width: 26.7vw;
     display: flex;
+    background-color: rgb(0, 0, 0);
+    border-top: solid rgb(64, 64, 64) 1px;
     
 }
 #name{
     color:white;
     width: 90%;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 14xpx;  
+    margin-top: 9px;  
 }
 #name span{
-    color:white;
+    color:rgb(183, 183, 183);
     width: 90%;
-    font-size: 15px;
+    font-size:12px;
+    margin-bottom: 10px;
 }
 #img{
-    width:29vw;
-    height: 62vh;
+    width:27vw;
+    height: 65vh;
     border: 2px solid rgb(111, 111, 111);
 }
 #post_footer span {
@@ -55,9 +62,12 @@
 }
 
 #blue{
-    width:1.5vw;
-    height: 2vh;
+    width:2vw;
+    height: 3   h;
     border-radius: 50px;
+    margin-left: 8px;
+    
+    
 }
 
 

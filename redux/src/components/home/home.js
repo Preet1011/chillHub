@@ -25,7 +25,7 @@ export default function Home() {
             
             <div id="post_header">
               <div id="dp"></div>
-              <div id="name">Preet Tyagi<img id="blue" src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Eo_circle_light-blue_checkmark.svg/640px-Eo_circle_light-blue_checkmark.svg.png'></img><br/><span>Admin</span></div>
+              <div id="name">Preet Tyagi<img id="blue" src='https://images.herzindagi.info/image/2022/Dec/how-to-get-blue-tick-on-twitter-price-followers.jpg'></img><br/><span>Admin</span></div>
             </div>
             <div id="post_content">
                 <img id="img" src='https://media.licdn.com/dms/image/D4D35AQFUAHmJj30cnQ/profile-framedphoto-shrink_400_400/0/1668580700462?e=1681232400&v=beta&t=loF3y-bV0ce54ok4vkFCg27X6Xa2MkumUixUmES_6CY'></img>
@@ -125,10 +125,10 @@ export default function Home() {
         <div id="post">
             <div id="post_header">
               <div id="dp"></div>
-              <div id="name">Kiara Advani<img id="blue" src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Eo_circle_light-blue_checkmark.svg/640px-Eo_circle_light-blue_checkmark.svg.png'></img><br/><span>Admin</span></div>
+              <div id="name">Kiara Advani<img id="blue" src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Eo_circle_light-blue_checkmark.svg/640px-Eo_circle_light-blue_checkmark.svg.png'></img><br/><p>Admin</p></div>
             </div>
             <div id="post_content">
-                <img id="img" src='https://s3images.zee5.com/wp-content/uploads/2023/02/ANI-20230204061222.jpg'></img>
+                <img id="img" src='https://images.herzindagi.info/image/2022/Dec/how-to-get-blue-tick-on-twitter-price-followers.jpg'></img>
             </div>
             <div id="post_footer">
                 <span>like</span>

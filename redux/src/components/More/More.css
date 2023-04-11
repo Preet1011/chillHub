@@ -1,0 +1,27 @@
+#morecont{
+    background: rgb(209, 13, 13);
+    height:36.6vh;
+    width: 17vw;
+    margin-left: 1vw;
+    border-radius: 9px;
+    animation-name: more;
+    margin-top:50vh;
+    margin-left: 20vw;
+   
+}
+@keyframes more{
+    from{margin-bottom: 0;}
+    to{margin-bottom: 10px;}
+}
+
+.morebut{
+    height: 6vh;
+    padding-top: 3vh;
+    border-radius: 10px;
+    text-align: center;
+    
+
+}
+.morebut:hover{
+    background-color: rgb(55, 55, 55);
+}

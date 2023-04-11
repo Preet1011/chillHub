@@ -9,11 +9,48 @@
     
 }
 #notice_board{
+    opacity: 79%;
     top: 20px;
     width:18vw;
     color:white;
-    font-weight: bold;
+    
     height: 40vh;
-    margin:17vh 4.5vw;
+    margin-left:3vw;
+    margin-top: 9vh;
     border-radius: 20px;
+    background-color: rgb(73, 73, 73);
+
+}
+#noticehead{
+    padding-left: 33%;
+    padding-top: 1.5%;
+    padding-bottom: 3.5%;
+    
+    font-size: 24px;
+    font-weight: bold;
+    
+    border-top-left-radius: 10px ;
+    border-top-right-radius: 10px ;
+    border-bottom: 1.4px solid white;
+}
+#notice_board:hover{
+    opacity: 100;
+    scale: 1.04;
+}
+
+#footer{
+     border-top: 1px solid rgb(54, 54, 54);
+     width: 75%;
+     margin-top: 60%;
+     font-weight: bold;
+     text-align: center;
+     padding-top: 20px;
+     font-size: 15px;
+     color: rgb(238, 238, 235);
+     
+     
+}
+#team{
+    
+    font-size: 20px;
 }

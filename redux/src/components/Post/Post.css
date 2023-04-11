@@ -2,10 +2,12 @@
     width: 45vw;
     height: 55vh;
     background-color: rgb(33, 37, 40);
-    position: fixed;
-    margin-left: 20vw ;
-    margin-top: 20vh;
+    
+    margin-left: 27vw ;
+    margin-top: -50vh;
     border-radius: 30px;
+    position: fixed;
+    display: none;
     
 }
 

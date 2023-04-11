@@ -1,17 +1,29 @@
 #whole{
-    animation-duration: 1s;
+    
+    display: none;
+    
+}
+@keyframes notification{
+    from {margin-left: 0;}
+    to {margin-left:17.5 ;}
+
+    
 }
 #notifybody{
     background-color: rgb(87, 87, 87);
     color: rgb(255, 255, 255);
-    position: fixed;
-    margin-left: 17.5vw;
-    margin-top: -69.4vh;
-    width: 30vw;
-    height: 85vh;
+    
+    
+    margin-top: -100vh;
+    
+    
+    height: 73vh;
     border-radius: 20px;
     /* display: none; */
-    display: none;
+    animation-duration: 400ms;
+    animation-name: notification ;
+
+  
     
    
 }
