@@ -6,7 +6,7 @@
     /* margin-top: 3%; */
     position:fixed;
     border-right: rgb(47, 46, 46) solid 1px;
-    
+    z-index: 1;
 }
 #navbar h2 a{
     text-decoration: none;
