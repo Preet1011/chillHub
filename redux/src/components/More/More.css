@@ -5,9 +5,9 @@
     margin-left: 1vw;
     border-radius: 9px;
     animation-name: more;
-    margin-top:50vh;
-    margin-left: 20vw;
-   
+    margin-top:-50vh;
+    margin-left: vw;
+   display: none;
 }
 @keyframes more{
     from{margin-bottom: 0;}

@@ -15,13 +15,25 @@ import Post from './components/Post/Post';
 import Edit from './components/Edit/Edit.js';
 import Upload from './components/upload/Upload';
 import More from './components/More/More';
+import { useEffect, useState } from 'react';
 function App() {
+  function Body(){
+    document.getElementById("morecont").style.display="none";
+        document.getElementById("whole").style.display="none";
+        document.getElementById("searchwhole").style.display="none";
+        document.getElementById("post_cointainer").style.display="none";
+}
+
+  const [isLogin,setLogin]=useState("false");
+  
   return (
-    <div className="App">
+    <div className="App" >
+    <Navbar/>
+    <div onClick={Body}>
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home/>} ></Route>
-            <Route path="/login" element={<Login/>} ></Route>
+            <Route path="/login" element={<Login setLogin={setLogin}/>} ></Route>
             <Route path="/messages" element={<Messages/>} ></Route>
             <Route path="/register" element={<Register/>} ></Route>
             <Route path="/profile" element={<Profile/>}> </Route>
@@ -36,6 +48,7 @@ function App() {
 
           </Routes>
         </BrowserRouter>
+        </div>
     </div>
   );
 }

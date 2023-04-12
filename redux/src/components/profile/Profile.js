@@ -1,6 +1,7 @@
 import React from 'react'
 import "./Profile.css"
 import Navbar from '../layout/navbar'
+import Edit from '../Edit/Edit';
 
 function Profile() {
     function editpro(){
@@ -16,7 +17,8 @@ function Profile() {
         }
     return (
         <div  >
-            <Navbar/>
+            {/* <Navbar/> */}
+            <Edit/>
             <div id='profile_container'>
                 <div id="profile_card">
                     <img id="profile_pic" src='https://i0.wp.com/hindimeinfo.com/wp-content/uploads/2023/03/shree-ram-dp-00013-91.png?resize=400%2C400&ssl=1'></img>

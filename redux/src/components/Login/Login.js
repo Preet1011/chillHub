@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import "./Login.css"; // import CSS file
 import Logo from "../home/logo";
 
-function Login() {
+function Login({setLogin}) {
+  const navigate=useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -18,6 +19,9 @@ function Login() {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(`Username: ${username}, Password: ${password}`);
+    setLogin(true);
+    document.getElementById("navbar").style.display="inline-block";
+    navigate("/");
     // handle login logic here
   };
 

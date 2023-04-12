@@ -5,7 +5,7 @@ export default function Messages() {
   return (
     
     <div style={{background:"#f2f2f2",height:"100vh"}}>
-       <Navbar/> 
+       {/* <Navbar/>  */}
        <div id="extra_div"></div>
        <div id="messages">
         <table id="table">

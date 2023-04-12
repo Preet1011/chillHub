@@ -16,12 +16,14 @@ export default function Home() {
 
   return (
     
-    <div id="home">
-        <Navbar/>
+    <div id="home" >
+        {/* <Navbar/> */}
+        
         <Stories/>
         <Notices/>
+        
         <div id='extra_div'></div>
-        <div id="post">
+        <div id="post" >
             
             <div id="post_header">
               <div id="dp"></div>
@@ -135,10 +137,10 @@ export default function Home() {
                 <span>comments</span>
                 <span> share</span>
             </div>
-        </div>
+       
         
         <div id="extra_div"></div>
-        
+        </div>
     </div>
   )
 

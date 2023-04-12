@@ -1,5 +1,6 @@
 #edit_whole{
     display: none;
+    z-index: 0;
 }
 #edit_container{
     background-color: #000;
