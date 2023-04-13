@@ -2,25 +2,29 @@ import React, { useState } from "react";
 import {Link} from 'react-router-dom'
 import "./Register.css"; // import CSS file
 import Logo from "../home/logo";
+import axios from 'axios';
 
 function Register() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const handleUsernameChange = (event) => {
-    setUsername(event.target.value);
-  };
-
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(`Username: ${username}, Password: ${password}`);
-    // handle login logic here
-  };
+  const [user,setUser]=useState({
+    username:"",
+    name:"",
+    email:"",
+    password:""
+  });
+  const {name,username,email,password}=user;
+  const onValChange=(e)=>{
+    setUser({...user,[e.target.name]:e.target.value});
+  }
+  const handleSubmit=()=>{
+    // alert("hello");
+    // const [name,username,email,password]=user;
+    // if(name&&username&&email&&password){
+      //  axios.post("http://localhost:8000/register",user).then(res=>console.log(res));
+    // }
+    // else {
+    //   alert("not valid");
+    // }
+  }
 
   return (
     <div id="register-container">
@@ -36,8 +40,9 @@ function Register() {
           <td>Username:</td>
           <td><input
             type="text"
+            name="username"
             value={username}
-            onChange={handleUsernameChange}
+            onChange={onValChange}
             className="input-field"
           />
         </td>
@@ -46,8 +51,9 @@ function Register() {
           <td>Name:</td>
           <td><input
             type="text"
+            name="name"
             value={name}
-            onChange={handleUsernameChange}
+            onChange={onValChange}
             className="input-field"
           />
         </td>
@@ -56,8 +62,9 @@ function Register() {
           <td>Email:</td>
           <td><input
             type="Email"
+            name="email"
             value={email}
-            onChange={handleUsernameChange}
+            onChange={onValChange}
             className="input-field"
           />
         </td>
@@ -66,8 +73,9 @@ function Register() {
           <td>Password:</td>
           <td><input
             type="password"
+            name="password"
             value={password}
-            onChange={handlePasswordChange}
+            onChange={onValChange}
             className="input-field"
           />
         </td></tr>
