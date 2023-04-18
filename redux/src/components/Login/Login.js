@@ -2,27 +2,37 @@ import React, { useState } from "react";
 import {Link, useNavigate} from 'react-router-dom'
 import "./Login.css"; // import CSS file
 import Logo from "../home/logo";
-
+import Axios from "axios"
 function Login({setLogin}) {
   const navigate=useNavigate();
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
 
-  const handleUsernameChange = (event) => {
-    setUsername(event.target.value);
-  };
+  const [user,setUser]=useState({
+    username:"",
+    password:""
+  });
+  const {username,password}=user;
+  const onValChange=(e)=>{
+    setUser({...user,[e.target.name]:e.target.value});
+  }
 
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-  };
+  const handleSubmit = () => {
+    const {username,password}=user;
+    if(username&&password){
+      Axios.post("http://localhost:8000/login",user).then(res=>{
+        if(res.data.message==="Login Successfully"){
+          setLogin(true);
+           navigate("/");
+        }else{
+           alert(res.data.message);
+        }
+      });
+    }
+    else{
+      alert("Please enter details")
+    }
+    
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(`Username: ${username}, Password: ${password}`);
-    setLogin(true);
-    document.getElementById("navbar").style.display="inline-block";
-    navigate("/");
-    // handle login logic here
+    
   };
 
   return (
@@ -33,13 +43,14 @@ function Login({setLogin}) {
       <Logo/>
       <h1 ><img src="https://download.logo.wine/logo/Microsoft_account/Microsoft_account-Logo.wine.png" style={{width:"30%",borderRadius:"50%"}}></img></h1>
       
-      <form onSubmit={handleSubmit}>
+      
         <label>
           Username:
           <input
             type="text"
+            name="username"
             value={username}
-            onChange={handleUsernameChange}
+            onChange={onValChange}
             className="input-field"
           />
         </label>
@@ -48,13 +59,14 @@ function Login({setLogin}) {
           Password:
           <input
             type="password"
+            name="password"
             value={password}
-            onChange={handlePasswordChange}
+            onChange={onValChange}
             className="input-field"
           />
         </label><br/>
-        <button type="submit" className="submit-button">Submit</button>
-      </form>
+        <button type="submit" className="submit-button" onClick={handleSubmit}>Submit</button>
+      <br></br>
      Don't have account ? <Link to="/register"id="a"><b>Register</b></Link>
     </div>
     </div>

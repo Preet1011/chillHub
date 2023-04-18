@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import "./Register.css"; // import CSS file
 import Logo from "../home/logo";
-import axios from 'axios';
+import Axios from 'axios';
 
 function Register() {
+  const navigate=useNavigate();
   const [user,setUser]=useState({
     username:"",
     name:"",
@@ -16,14 +17,20 @@ function Register() {
     setUser({...user,[e.target.name]:e.target.value});
   }
   const handleSubmit=()=>{
-    // alert("hello");
-    // const [name,username,email,password]=user;
-    // if(name&&username&&email&&password){
-      //  axios.post("http://localhost:8000/register",user).then(res=>console.log(res));
-    // }
-    // else {
-    //   alert("not valid");
-    // }
+    
+    const {username,password,email,name}=user;
+    if(username&&password&&email&&name){
+      Axios.post("http://localhost:8000/register",user).then(res=>{
+        if(res.data.message==="registered"){
+           navigate("/login");
+        }else{
+           alert(res.data.message);
+        }
+      });
+    }
+    else{
+      alert("Please enter details")
+    }
   }
 
   return (
@@ -34,7 +41,7 @@ function Register() {
       <Logo/>
       <h1 ><img src="https://www.sitesvault.com/users/img/images/icons/icon_sign_up.png" style={{width:"30%",borderRadius:"50%"}}></img></h1>
       
-      <form onSubmit={handleSubmit}>
+    
       <table>
         <tr>
           <td>Username:</td>
@@ -80,9 +87,9 @@ function Register() {
           />
         </td></tr>
         <tr >
-        <td colSpan={2}><button type="submit" className="submit-button">Register</button></td></tr>
+        <td colSpan={2}><button type="submit" className="submit-button" onClick={handleSubmit}>Register</button></td></tr>
         </table>
-      </form>
+    
      Already have account ?<Link to="/login"id="a"><b>Login</b></Link>
     </div>
     </div>

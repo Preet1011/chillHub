@@ -16,6 +16,7 @@ import Edit from './components/Edit/Edit.js';
 import Upload from './components/upload/Upload';
 import More from './components/More/More';
 import { useEffect, useState } from 'react';
+import Extra from './components/extra';
 function App() {
   function Body(){
     document.getElementById("morecont").style.display="none";
@@ -24,15 +25,22 @@ function App() {
         document.getElementById("post_cointainer").style.display="none";
 }
 
-  const [isLogin,setLogin]=useState("false");
-  
+  const [isLogin,setLogin]=useState(false);
+  useEffect(()=>{
+    if(isLogin){
+      document.getElementById("navbar").style.display="inline-block";
+    }
+    else{
+      document.getElementById("navbar").style.display="none";
+    }
+  })
   return (
     <div className="App" >
     <Navbar/>
     <div onClick={Body}>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Home/>} ></Route>
+            <Route path="/" element={isLogin?<Home/>:<Login setLogin={setLogin}/>} ></Route>
             <Route path="/login" element={<Login setLogin={setLogin}/>} ></Route>
             <Route path="/messages" element={<Messages/>} ></Route>
             <Route path="/register" element={<Register/>} ></Route>
