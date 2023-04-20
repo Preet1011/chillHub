@@ -31,7 +31,7 @@ function App() {
     const loadData =()=>{
       setLoading(false);
     }
-    setTimeout(loadData,1000);
+    setTimeout(loadData,500);
       
     
     let use=localStorage.getItem("loginUser");
