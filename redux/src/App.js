@@ -25,15 +25,39 @@ function App() {
         document.getElementById("post_cointainer").style.display="none";
 }
 
-  const [isLogin,setLogin]=useState(false);
+  const [isLogin,setLogin]=useState(true);
+  const [loading,setLoading]=useState(true);
   useEffect(()=>{
-    if(isLogin){
+    const loadData =()=>{
+      setLoading(false);
+    }
+    setTimeout(loadData,1000);
+      
+    
+    let use=localStorage.getItem("loginUser");
+    console.log(use);
+    if(use){
+      if(!loading)
       document.getElementById("navbar").style.display="inline-block";
     }
     else{
+      setLogin(false);
+      if(!loading)
       document.getElementById("navbar").style.display="none";
     }
   })
+  if(loading)
+    return (
+      <div id="loading">
+        <div id='hub1'>
+          <span ><span id="chill">Chill</span><span id="hu1">Hub</span></span>
+        </div>
+        <div id="loading1">
+          <h3>from <br></br> <span id="head">Montu</span></h3>
+        </div>
+      </div>
+    )
+  else
   return (
     <div className="App" >
     <Navbar/>
@@ -42,9 +66,9 @@ function App() {
           <Routes>
             <Route path="/" element={isLogin?<Home/>:<Login setLogin={setLogin}/>} ></Route>
             <Route path="/login" element={<Login setLogin={setLogin}/>} ></Route>
-            <Route path="/messages" element={<Messages/>} ></Route>
+            <Route path="/messages" element={isLogin?<Messages/>:<Login setLogin={setLogin}/>} ></Route>
             <Route path="/register" element={<Register/>} ></Route>
-            <Route path="/profile" element={<Profile/>}> </Route>
+            <Route path="/profile" element={isLogin?<Profile/>:<Login setLogin={setLogin}/>}> </Route>
             <Route path="/notification" element={<Notification/>}> </Route>
             <Route path="/search" element={<Search/>}> </Route>
             <Route path="/logo" element={<Home/>} ></Route>
@@ -52,13 +76,11 @@ function App() {
             <Route path="/edit" element={<Edit/>} ></Route>
             <Route path="/upload" element={<Upload/>} ></Route>
             <Route path="/more" element={<More/>} ></Route>
-
-
           </Routes>
         </BrowserRouter>
         </div>
     </div>
   );
 }
-
+    
 export default App;

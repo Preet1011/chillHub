@@ -21,6 +21,7 @@ function Login({setLogin}) {
       Axios.post("http://localhost:8000/login",user).then(res=>{
         if(res.data.message==="Login Successfully"){
           setLogin(true);
+          localStorage.setItem("loginUser",JSON.stringify(res.data.user));
            navigate("/");
         }else{
            alert(res.data.message);

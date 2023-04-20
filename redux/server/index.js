@@ -52,7 +52,7 @@ app.post('/login',(req,res)=>{
                 res.send({message:"User is Not Registered"});
             }
             else if(result[0].password===password){
-                res.send({message:"Login Successfully"});
+                res.send({message:"Login Successfully",user:result[0]});
             }
             else{
                 res.send({message:"username or password in incorrect"});

@@ -8,7 +8,7 @@ const Post = () => {
         <div id='post_cointainer'>
             <img id='post_img' src='https://cdn-icons-png.flaticon.com/512/7385/7385350.png'></img>
             <div id='post_head'> Drag photos and videos here </div>
-            <button id='but'>Select from computer</button>
+            <button id='but'><input type="file"></input>Select from computer</button>
 
         </div> 
         

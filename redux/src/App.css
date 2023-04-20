@@ -1,0 +1,44 @@
+
+#hub1{
+    margin-top:7%;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 2.5vw;
+    margin-left: 4%;
+    color: white;
+    justify-content: center;
+  }
+  #hu1{
+    background: #FF9900;
+    color: black;
+    border-radius: 1vw;
+    padding: .5vw;
+    justify-content: center;
+    display: inline-block;
+    animation-name: hub;
+  animation-duration: 1s;
+  }
+  @keyframes hub {
+    0%  {margin-left:400px; top:0px;}
+    
+    100% {margin-left:0px; top:0px;}
+  }
+  #loading{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top:20%;
+  }
+  #loading1{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top:20%;
+
+  }
+  #head{
+    font-weight: bold;
+    font-family: cursive;
+    font-size: 30px;
+    color: goldenrod;
+  }
