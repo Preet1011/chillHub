@@ -5,6 +5,7 @@ import Stories from './stories';
 import Notices from './Notice/Notices';
 import Notification from '../notification/Notification';
 export default function Home() {
+    
   return (
     
     <div id="home" >

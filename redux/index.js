@@ -18,9 +18,16 @@ conn.connect((err)=>{
         console.log("db connected....");
     }
 })
+function getId(username) {
+    const timestamp = new Date().getTime();
+    const randomString = Math.random().toString(36).substring(2, 15);
+    const uniqueId = `${username}${timestamp}${randomString}`;
+    return uniqueId;
+  }
 app.post('/register',(req,res)=>{
     let {username,name,email,password}=req.body;
-    let q="insert into users (username,name,email,password) values ('"+username+"','"+name+"','"+email+"','"+password+"')";
+    let userId=getId(username);
+    let q="insert into users (user_id,username,name,email,password) values ('"+userId+"','"+username+"','"+name+"','"+email+"','"+password+"')";
     let qu="select * from users where username='"+username+"'";
     conn.query(qu,(err,result)=>{
         if(err)throw err;
@@ -58,6 +65,21 @@ app.post('/login',(req,res)=>{
                 res.send({message:"username or password in incorrect"});
             }
         }
+    })
+    
+   
+})
+app.post('/AddPost',(req,res)=>{
+    let {user_id,image,caption,type}=req.body;
+    console.log(user_id);
+    let postId=getId(user_id.substring(3,8));
+    let q="insert into posts (post_id,user_id,image,caption,type) values ('"+postId+"','"+user_id+"','"+image+"','"+caption+"','"+type+"')";
+    conn.query(q,(err,result)=>{
+        if(err)throw err;
+        else {
+            res.send({message:"posted"});
+        }
+             
     })
     
    
