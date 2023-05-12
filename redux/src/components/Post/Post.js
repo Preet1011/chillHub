@@ -14,12 +14,12 @@ const Post = () => {
   
   
  const onValChange=e=>{
-  setPost({...post,[e.target.name]:e.target.value});
+  setPost({...post,[e.target.name]:e.target.value,"user_id":data.user_id,"type":data.type});
  }
  const handleSubmit=()=>{
-  console.log(post);
-  setPost({...post,"user_id":data.user_id});
-  setPost({...post,"type":data.type});
+  console.log(data.user_id);
+  
+console.log(post)
   axios.post("http://localhost:8000/AddPost",post).then(res=>console.log(res.data.message));
   window.location.reload();
  }

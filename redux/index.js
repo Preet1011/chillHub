@@ -84,9 +84,55 @@ app.post('/AddPost',(req,res)=>{
     
    
 })
+app.post('/like',(req,res)=>{
+    let {user_id,post_id}=req.body;
+    let q="select * from likes where user_id='"+user_id+"' and post_id='"+post_id+"'";
+    let q1="insert into likes (user_id,post_id,active) values ('"+user_id+"','"+post_id+"',1)";
+    console.log(user_id,post_id);
+    let q2="UPDATE likes SET active = CASE active WHEN 0 THEN 1 ELSE 0 END WHERE id=?";
+    let q3="update posts set likes = (select count(user_id) from likes where post_id='"+post_id+"'and active =1) where post_id='"+post_id+"'";
+    conn.query(q,(err,result)=>{
+        if(err)throw err;
+        else {
+            
+            if(result.length===0){
+                conn.query(q1,(err,resu)=>{
+                    if(err)throw err;
+                    else{
+                        conn.query(q3,(err,resu)=>{
+                            if(err)throw err;
+                            else{
+                                res.send({message:"liked"})
+                            }
+                        })
+                    }
+                })
+            }
+            else{console.log(result);
+                conn.query(q2,result[0].id,(err,resu)=>{
+                    if(err)throw err;
+                    else{
+                        conn.query(q3,(err,resu)=>{
+                            if(err)throw err;
+                            else{
+                                res.send({message:"liked/unliked"})
+                            }
+                        })
+                    }
+                })
+            }
+        }
+    })
+})
 
 
-
+app.get("/getPost",(req,res)=>{
+    let q="select likes,profilePic,name,posts.type,posts.user_id,post_id,image,comment FROM posts inner join users on posts.user_id=users.user_id ";
+    conn.query(q,(err,resu)=>{
+        if(err)throw err;
+        res.send({resu});
+    })
+})
 
 
 
