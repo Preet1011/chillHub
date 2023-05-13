@@ -1,27 +1,38 @@
 import React, { useEffect, useState } from 'react'
 import "./home.css";
-import Navbar from '../layout/navbar';
 import Stories from './stories';
 import Notices from './Notice/Notices';
 import axios from "axios";
-import Notification from '../notification/Notification';
 
 export default function Home() {
     const [posts, setPosts] = useState();
-    
+    const [comments,setComments]=useState([{post_id:"tu1681683906345851i7v6ikh1d8j"}]);
     const [loading, setLoading] = useState(true);
     useEffect(() => {
         loadUsers();
+        loadComments();
     }, []);
     const loadUsers = async () => {
         try {
           const result = await axios.get("http://localhost:8000/getPost");
           setPosts(result.data.resu);
+          localStorage.setItem("posts",JSON.stringify(result.data.resu));
           setLoading(false);
         } catch (error) {
           console.error(error);
         }
+        
       };
+      const loadComments=async()=>{
+        
+         try {
+            const result = await axios.get("http://localhost:8000/comments");
+            setComments(result.data.resu);
+          } catch (error) {
+            console.error(error);
+          }
+          console.log(comments);
+      }
       let data=JSON.parse(localStorage.getItem("loginUser"));
     const like=(id)=>{
         let a={
@@ -31,9 +42,31 @@ export default function Home() {
         axios.post("http://localhost:8000/like",a).then(res=>console.log(res.data));
         loadUsers();
     }
+    const comment=async(id)=>{ 
+      let a=document.getElementById(id).style.display;
+      if(a==="none"){
+        document.getElementById(id).style.display="inline-block";
+      }else{
+        document.getElementById(id).style.display="none";
+      }
+  }
       if (loading) {
         return <div>Loading...</div>;
       }
+
+      const addComment=(id)=>{
+        let co=document.getElementById(`comment${id}`).value;
+        let a={
+            post_id:id,
+            user_id:data.user_id,
+            comment:co
+        };
+        axios.post("http://localhost:8000/addComment",a).then(res=>console.log(res.data));
+        loadUsers();
+        loadComments();
+    }      
+
+
     return (
 
         <div id="home" >
@@ -47,18 +80,33 @@ export default function Home() {
                 <div id="post"key={post.id} >
                     <div id="post_header">
                         <div id="dp"><img src={post.profilePic}></img></div>
-                        <div id="name">{post.name}<img id="blue" src='https://images.herzindagi.info/image/2022/Dec/how-to-get-blue-tick-on-twitter-price-followers.jpg'></img><br /><span>Admin</span></div>
+                        <div id="name">{post.name}{post.type?<span><img id="blue" src='https://images.herzindagi.info/image/2022/Dec/how-to-get-blue-tick-on-twitter-price-followers.jpg'></img><br /><span>Admin</span></span>:null}</div>
                     </div>
                     <div id="post_content">
                         <img id="img" src={post.image}></img>
                     </div>
                     <div id="post_footer">
                         <span onClick={()=>like(post.post_id)} style={{cursor:"pointer"}}>{post.likes} Like</span>
-                        <span>comments</span>
-                        <span> share</span>
+                        <span onClick={()=>comment(post.post_id)} style={{cursor:"pointer"}}>comments</span>
                     </div>
+
+
+                    <div id={post.post_id} className='comments'><div id="comment_ext"></div>
+                    {comments.map(comment=>{
+                      if(comment.post_id===post.post_id){
+                        return (
+                          <div id="comment_header" >
+                            <div id="dp"><img src={comment.profilePic}></img></div>
+                            <div id="name">{comment.name}{comment.type?<span><img id="blue" src='https://images.herzindagi.info/image/2022/Dec/how-to-get-blue-tick-on-twitter-price-followers.jpg'></img><br /></span>:<br></br>}<span>{comment.comment}</span></div>
+                          </div>
+                        );
+                      }
+                    })}
+                    <div id="comment_box"><input type="text" id={`comment${post.post_id}` }className="comment_input"></input> <button id="comment_btn" onClick={()=>addComment(post.post_id)}><img className='messages_img' src='https://png.pngtree.com/png-vector/20190329/ourmid/pngtree-vector-paper-plane-icon-png-image_889384.jpg' width={"18px"}></img></button></div>
+                    </div> 
                 </div>
               ))}
+              <div id='extra_div'></div>
         </div>
     )
 

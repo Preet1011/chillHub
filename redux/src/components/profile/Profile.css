@@ -22,10 +22,11 @@
     
 }
 #profile_pic{
+    width: 11vw;
     height: 22vh;
     margin-left: 35vw;
     margin-top: 7vh;
-    border-radius:50px ;
+    border-radius:100px ;
 
 }
 .text{
@@ -124,3 +125,4 @@ a{
     
     
 }
+

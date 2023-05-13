@@ -9,7 +9,7 @@ import Post from '../Post/Post';
 import More from '../More/More';
 export default function Navbar() {
   const[isOpen,setopen]= useState(false);
-
+  let data=JSON.parse(localStorage.getItem("loginUser"));
   function Notificatio(){
    
       let a=document.getElementById("whole").style.display;
@@ -91,7 +91,7 @@ export default function Navbar() {
       </div>
       <a href='profile' className='navbarbut' >
         Profile
-        <img  src='https://i0.wp.com/hindimeinfo.com/wp-content/uploads/2023/03/shree-ram-dp-00013-91.png?resize=400%2C400&ssl=1' id='profileimg'></img>
+        <img  src={data.profilePic} id='profileimg'></img>
       </a>
       <div  className='navbarbut' id='morebut' onClick={Mor}>
         More

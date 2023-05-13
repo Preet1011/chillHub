@@ -124,10 +124,25 @@ app.post('/like',(req,res)=>{
         }
     })
 })
+app.get("/comments",(req,res)=>{
+    let q="select post_id,comments.user_id,comment ,profilePic,name,type from comments inner join users on users.user_id=comments.user_id ";
+    conn.query(q,(err,resu)=>{
+        if(err)throw err;
+        res.send({resu});
+    })
+})
+app.post("/addComment",(req,res)=>{
+    const {user_id,post_id,comment}=req.body;
+    let q="insert into comments (user_id,post_id,comment) values ('"+user_id+"','"+post_id+"','"+comment+"')";
 
+    conn.query(q,(err,resu)=>{
+        if(err)throw err;
+        res.send({message:"commented"});
+    })
+})
 
 app.get("/getPost",(req,res)=>{
-    let q="select likes,profilePic,name,posts.type,posts.user_id,post_id,image,comment FROM posts inner join users on posts.user_id=users.user_id ";
+    let q="select likes,profilePic,name,users.type,posts.user_id,post_id,image,comment FROM posts inner join users on posts.user_id=users.user_id ";
     conn.query(q,(err,resu)=>{
         if(err)throw err;
         res.send({resu});

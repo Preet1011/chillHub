@@ -1,22 +1,18 @@
 import { BrowserRouter, Routes,Route } from 'react-router-dom';
 import './App.css';
 import Home from './components/home/home';
-import Stories from './components/home/stories';
 import Navbar from './components/layout/navbar';
-import Notices from './components/home/Notice/Notices'
 import Login from './components/Login/Login';
 import Register from './components/register/Register';
 import Messages from './components/messages/messages';
 import Profile from './components/profile/Profile';
 import Notification from './components/notification/Notification';
 import Search from './components/search/Search';
-import Logo from './components/home/logo';
 import Post from './components/Post/Post';
 import Edit from './components/Edit/Edit.js';
 import Upload from './components/upload/Upload';
 import More from './components/More/More';
 import { useEffect, useState } from 'react';
-import Extra from './components/extra';
 function App() {
   function Body(){
     document.getElementById("morecont").style.display="none";
