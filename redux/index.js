@@ -84,6 +84,20 @@ app.post('/AddPost',(req,res)=>{
     
    
 })
+app.post('/Addstory',(req,res)=>{
+    let {user_id,story,caption,type}=req.body;
+    let storyId=getId(caption.substring(1,6));
+    let q="insert into stories (story_id,user_id,story,caption,active,type) values ('"+storyId+"','"+user_id+"','"+story+"','"+caption+"',1,'"+type+"')";
+    conn.query(q,(err,result)=>{
+        if(err)throw err;
+        else {
+            res.send({message:"posted"});
+        }
+             
+    })
+    
+   
+})
 app.post('/like',(req,res)=>{
     let {user_id,post_id}=req.body;
     let q="select * from likes where user_id='"+user_id+"' and post_id='"+post_id+"'";
@@ -140,17 +154,37 @@ app.post("/addComment",(req,res)=>{
         res.send({message:"commented"});
     })
 })
-
-app.get("/getPost",(req,res)=>{
-    let q="select likes,profilePic,name,users.type,posts.user_id,post_id,image,comment FROM posts inner join users on posts.user_id=users.user_id ";
+app.get("/getStories",(req,res)=>{
+    let q="select profilePic,name,users.type,stories.user_id,story_id,story FROM stories inner join users on stories.user_id=users.user_id and stories.active=1";
     conn.query(q,(err,resu)=>{
         if(err)throw err;
         res.send({resu});
     })
 })
 
+app.get("/getPost",(req,res)=>{
+   let q1="update stories set active= 0 where DATEDIFF(NOW(),created_at)>=1"
+    let q="select likes,profilePic,name,users.type,posts.user_id,post_id,image,comment FROM posts inner join users on posts.user_id=users.user_id ";
+    conn.query(q,(err,resu)=>{
+        if(err)throw err;
+        else{
+            conn.query(q1,(err,result)=>{
+                if(err)throw err; 
+                res.send({resu});
+            })
+        }
+        
+    })
+})
 
 
+app.get("/getUsers",(req,res)=>{
+    let q="select * from users";
+    conn.query(q,(err,resu)=>{
+        if(err)throw err;
+        res.send({resu});
+    })
+})
 
 
 

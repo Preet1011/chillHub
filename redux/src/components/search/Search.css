@@ -1,6 +1,7 @@
 #searchwhole{
     display: none;
-    
+    position :fixed;
+    top:5%;
     
 }
 
@@ -9,7 +10,8 @@
     color: rgb(255, 255, 255);
     
     animation-name: search;
-    margin-top: -68vh;
+    /* margin-top: -68vh; */
+    top:0;
     width: 30vw;
     height: 80vh;
     border-radius: 20px;

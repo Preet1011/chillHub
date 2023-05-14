@@ -125,4 +125,31 @@ a{
     
     
 }
+#post_line{
+    width:50%;
+    height:auto;
+    border-top: 2px solid white;
+    margin-left: 48%;
+    display: flex;
+    flex-wrap: wrap;
+}
+#posts_div{
+    border: 1px solid black;
+    width:100px;
+    height: 100px;
 
+    cursor: pointer;
+}
+#posts_img{
+    
+    width:100px;
+    height: 100px;
+    
+}
+.posts{
+    display: none;
+    
+    position: absolute;
+    top:75;
+    left:20%;
+}

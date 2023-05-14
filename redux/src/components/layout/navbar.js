@@ -10,6 +10,9 @@ import More from '../More/More';
 export default function Navbar() {
   const[isOpen,setopen]= useState(false);
   let data=JSON.parse(localStorage.getItem("loginUser"));
+  // if(!data){
+  //   data={profilePic:"hello.jpg"}
+  // }
   function Notificatio(){
    
       let a=document.getElementById("whole").style.display;

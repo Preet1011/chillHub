@@ -29,8 +29,9 @@ console.log(post)
         
         <div id='post_cointainer'>
             <img id='post_img' src='https://cdn-icons-png.flaticon.com/512/7385/7385350.png'></img>
-            <div id='post_head'> Drag photos and videos here </div>
+            <div id='post_head'> Enter the URL of the Image : </div>
             <input type="text" name="image" value={image} onChange={onValChange}></input>
+            <div id='post_head'> Add caption : </div>
             <input type="text" name="caption" value={caption}onChange={onValChange}></input>
             <button id='but' onClick={handleSubmit}>submit</button>
         </div> 

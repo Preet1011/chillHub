@@ -5,7 +5,6 @@
     background: black;
     /* margin-top: 3%; */
     position:fixed;
-    display: none;
     border-right: rgb(47, 46, 46) solid 1px;
     z-index: 1;
 }

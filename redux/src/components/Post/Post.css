@@ -10,12 +10,19 @@
     display: none;
     
 }
-
+#post_cointainer input{
+    width: 80%;
+    border-radius: 10px;
+    padding: 1%;
+    background-color: #3578E5;
+    margin-left: 10%;
+    color: white;
+}
 #post_head{
 
-    padding-left: 13.5vw;
-    margin-top: 3vh;
-    font-size: 20px;
+    padding-left: 5vw;
+    margin-top: 1vh;
+    font-size: 15px;
     font-weight: 700;
 }
 #post_img{

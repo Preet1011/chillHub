@@ -14,11 +14,13 @@ import Upload from './components/upload/Upload';
 import More from './components/More/More';
 import { useEffect, useState } from 'react';
 function App() {
+  let use=localStorage.getItem("loginUser");
   function Body(){
-    document.getElementById("morecont").style.display="none";
+    if(use){
+        document.getElementById("morecont").style.display="none";
         document.getElementById("whole").style.display="none";
         document.getElementById("searchwhole").style.display="none";
-        document.getElementById("post_cointainer").style.display="none";
+        document.getElementById("post_cointainer").style.display="none";}
 }
 
   const [isLogin,setLogin]=useState(true);
@@ -28,18 +30,11 @@ function App() {
       setLoading(false);
     }
     setTimeout(loadData,500);
-      
-    
-    let use=localStorage.getItem("loginUser");
     console.log(use);
     if(use){
-      if(!loading)
-      document.getElementById("navbar").style.display="inline-block";
-    }
-    else{
+      setLogin(true);
+    }else{
       setLogin(false);
-      if(!loading)
-      document.getElementById("navbar").style.display="none";
     }
   })
   if(loading)
@@ -56,7 +51,7 @@ function App() {
   else
   return (
     <div className="App" >
-    <Navbar/>
+   {use?<Navbar/>:null} 
     <div onClick={Body}>
         <BrowserRouter>
           <Routes>

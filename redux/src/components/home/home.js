@@ -5,12 +5,14 @@ import Notices from './Notice/Notices';
 import axios from "axios";
 
 export default function Home() {
-    const [posts, setPosts] = useState();
+    const [posts, setPosts] = useState([1,2]);
     const [comments,setComments]=useState([{post_id:"tu1681683906345851i7v6ikh1d8j"}]);
     const [loading, setLoading] = useState(true);
     useEffect(() => {
         loadUsers();
+        loadStories();
         loadComments();
+        loadUser();
     }, []);
     const loadUsers = async () => {
         try {
@@ -18,6 +20,28 @@ export default function Home() {
           setPosts(result.data.resu);
           localStorage.setItem("posts",JSON.stringify(result.data.resu));
           setLoading(false);
+        } catch (error) {
+          console.error(error);
+        }
+        
+      };
+      const loadUser = async () => {
+        try {
+          const result = await axios.get("http://localhost:8000/getUsers");
+          setPosts(result.data.resu);
+          console.log(result.data.resu);
+          localStorage.setItem("users",JSON.stringify(result.data.resu));
+        } catch (error) {
+          console.error(error);
+        }
+        
+      };
+      const loadStories = async () => {
+        try {
+          const result = await axios.get("http://localhost:8000/getStories");
+          // setStories(result.data.resu);
+          localStorage.setItem("stories",JSON.stringify(result.data.resu));
+          
         } catch (error) {
           console.error(error);
         }
@@ -31,7 +55,6 @@ export default function Home() {
           } catch (error) {
             console.error(error);
           }
-          console.log(comments);
       }
       let data=JSON.parse(localStorage.getItem("loginUser"));
     const like=(id)=>{
@@ -91,7 +114,8 @@ export default function Home() {
                     </div>
 
 
-                    <div id={post.post_id} className='comments'><div id="comment_ext"></div>
+                    <div id={post.post_id} className='comments'>
+                    <div id="comment_box"><input type="text" id={`comment${post.post_id}` }className="comment_input"></input> <button id="comment_btn" onClick={()=>addComment(post.post_id)}><img className='messages_img' src='https://png.pngtree.com/png-vector/20190329/ourmid/pngtree-vector-paper-plane-icon-png-image_889384.jpg' width={"18px"}></img></button></div>
                     {comments.map(comment=>{
                       if(comment.post_id===post.post_id){
                         return (
@@ -102,7 +126,7 @@ export default function Home() {
                         );
                       }
                     })}
-                    <div id="comment_box"><input type="text" id={`comment${post.post_id}` }className="comment_input"></input> <button id="comment_btn" onClick={()=>addComment(post.post_id)}><img className='messages_img' src='https://png.pngtree.com/png-vector/20190329/ourmid/pngtree-vector-paper-plane-icon-png-image_889384.jpg' width={"18px"}></img></button></div>
+                    
                     </div> 
                 </div>
               ))}
