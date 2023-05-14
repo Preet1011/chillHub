@@ -32,6 +32,7 @@ function App() {
     setTimeout(loadData,500);
     console.log(use);
     if(use){
+      
       setLogin(true);
     }else{
       setLogin(false);

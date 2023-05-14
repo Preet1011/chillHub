@@ -8,6 +8,8 @@ function Profile() {
     let data1=JSON.parse(localStorage.getItem("posts"));
     console.log(data1); 
     const [count,setCount]=useState(0);
+    const [follower,setFollower]=useState(0);
+    const [following,setFollowing]=useState(0);
     const [posts,setpost]=useState([]);
     const [comments,setComments]=useState([{post_id:"tu1681683906345851i7v6ikh1d8j"}]);
 
@@ -36,6 +38,7 @@ function Profile() {
         document.getElementById(id).style.display="none";
       }
   }
+  let data2=JSON.parse(localStorage.getItem("Friends"));
     function countPost(){
         let a=0;
         loadComments();
@@ -44,6 +47,18 @@ function Profile() {
                 a=a+1;
             }
          })
+         let b=0;
+         let c=0;
+         data2.map(post=>{
+            if(post.user_id1===data.user_id && post.active===1 && post.accept>=0){
+                b=b+1;
+            }
+            else if(post.user_id2===data.user_id && post.active===1 && post.accept>=0){
+                c=c+1;
+            }
+         })
+         setFollowing(b);
+         setFollower(c);
          let res=data1.filter((d)=>d.user_id===data.user_id);
          setpost(res);
          console.log(res,data.user_id);
@@ -98,11 +113,11 @@ function Profile() {
                 </div>
                 <div id="profile_follow">
                     <div className='follow'><h3>{count}</h3><h4>posts</h4></div>
-                    <div className='follow'><h3>0</h3><h4>followers</h4></div>
-                    <div className='follow'><h3>0</h3><h4>following</h4></div>
+                    <div className='follow'><h3>{follower}</h3><h4>followers</h4></div>
+                    <div className='follow'><h3>{following}</h3><h4>following</h4></div>
                 </div>
                 <div id="profile_btn">
-                    <div id='edit_profile' onClick={editpro}> Edit</div>
+                    <button onClick={editpro} id='edit_profile'>Edit</button>
                     <button id='edit_profile' ><a href='messages'>Message</a></button>
                 </div>
             </div>

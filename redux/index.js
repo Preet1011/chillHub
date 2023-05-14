@@ -163,7 +163,7 @@ app.get("/getStories",(req,res)=>{
 })
 
 app.get("/getPost",(req,res)=>{
-   let q1="update stories set active= 0 where DATEDIFF(NOW(),created_at)>=1"
+   let q1="update stories set active= 0 where TIMESTAMPDIFF(HOUR,created_at,NOW())>=24"
     let q="select likes,profilePic,name,users.type,posts.user_id,post_id,image,comment FROM posts inner join users on posts.user_id=users.user_id ";
     conn.query(q,(err,resu)=>{
         if(err)throw err;
@@ -177,7 +177,22 @@ app.get("/getPost",(req,res)=>{
     })
 })
 
-
+app.post("/editUser",(req,res)=>{
+    const {name,username,website,bio,email,phone,profilePic,user_id}=req.body;
+    
+    let q="update users set name='"+name+"',username='"+username+"',website='"+website+"',bio='"+bio+"',email='"+email+"',phone='"+phone+"',profilePic='"+profilePic+"' where user_id ='"+user_id+"'";
+    conn.query(q,(err,resu)=>{
+        if(err)throw err;
+        let qu="select * from users where user_id='"+user_id+"'";
+        conn.query(qu,(err,result)=>{
+            if(err)throw err;
+            
+            else{console.log(result);
+                res.send({result})
+            }
+    })
+})
+})
 app.get("/getUsers",(req,res)=>{
     let q="select * from users";
     conn.query(q,(err,resu)=>{
@@ -185,8 +200,60 @@ app.get("/getUsers",(req,res)=>{
         res.send({resu});
     })
 })
+app.get("/getFriend",(req,res)=>{
+    let q="select * from friends";
+    conn.query(q,(err,resu)=>{
+        if(err)throw err;
+        res.send({resu});
+    })
+})
 
+app.post("/request",(req,res)=>{
+    const {user_id1,user_id2}=req.body;
+    let q="insert into friends (user_id1,user_id2,active,accept) values ('"+user_id1+"','"+user_id2+"',1,0)";
+    let q2="update friends set active = 1 , accept=0  where  user_id1='"+user_id1+"'and user_id2='"+user_id2+"'";
+    let q1="select * from friends where  user_id1='"+user_id1+"'and user_id2='"+user_id2+"'";
+    conn.query(q1,(err,resu)=>{
+        if(err) throw err;
+        else if(resu.length===0){
+            conn.query(q,(err,resu)=>{
+                if(err) throw err;
+                res.send({message:"request sent"});
+            })
+        }else{
+            conn.query(q2,(err,resu)=>{
+                if(err) throw err;
+                res.send({message:"request sent"});
+            })
+        }
+        
+    })
+})
 
+app.post("/unrequest",(req,res)=>{
+    const {user_id1,user_id2}=req.body;
+    let q="update friends set active = 0  where  user_id1='"+user_id1+"'and user_id2='"+user_id2+"'";
+    conn.query(q,(err,resu)=>{
+        if(err) throw err;
+        res.send({message:"request unsent"});
+    })
+})
+app.post("/accept",(req,res)=>{
+    const {user_id1,user_id2}=req.body;
+    let q="update friends set accept = 1  where  user_id1='"+user_id1+"'and user_id2='"+user_id2+"'";
+    conn.query(q,(err,resu)=>{
+        if(err) throw err;
+        res.send({message:"request accepted"});
+    })
+})
+app.post("/cancel",(req,res)=>{
+    const {user_id1,user_id2}=req.body;
+    let q="update friends set accept = -1 ,active = 0  where  user_id1='"+user_id1+"'and user_id2='"+user_id2+"'";
+    conn.query(q,(err,resu)=>{
+        if(err) throw err;
+        res.send({message:"request deleted"});
+    })
+})
 
 
 

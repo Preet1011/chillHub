@@ -1,17 +1,17 @@
 #morecont{
     background: rgb(209, 13, 13);
-    height:36.6vh;
-    width: 17vw;
+    height:30vh;
+    width: 15vw;
     margin-left: 1vw;
     border-radius: 9px;
-    animation-name: more;
-    margin-top:-50vh;
-    margin-left: vw;
+    animation: more .5s ease;
+    margin-top:-40vh;
+
    display: none;
 }
 @keyframes more{
-    from{margin-bottom: 0;}
-    to{margin-bottom: 10px;}
+    from{margin-top: 0vh;}
+    to{margin-bottom: -40vh;}
 }
 
 .morebut{

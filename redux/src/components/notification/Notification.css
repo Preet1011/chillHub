@@ -12,14 +12,15 @@
 #notifybody{
     background-color: rgb(87, 87, 87);
     color: rgb(255, 255, 255);
+    position: fixed;
+    top:10%;
     
     
-    margin-top: -100vh;
     
     
-    height: 73vh;
+    height: 77vh;
     border-radius: 20px;
-    /* display: none; */
+    
     animation-duration: 400ms;
     animation-name: notification ;
 

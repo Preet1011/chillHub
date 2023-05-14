@@ -7,19 +7,38 @@ import axios from "axios";
 export default function Home() {
     const [posts, setPosts] = useState([1,2]);
     const [comments,setComments]=useState([{post_id:"tu1681683906345851i7v6ikh1d8j"}]);
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState({
+      a:true,
+      b:true,
+      c:true,
+      d:true,
+      e:true
+    });
     useEffect(() => {
         loadUsers();
         loadStories();
         loadComments();
         loadUser();
+        loadFriends()
     }, []);
     const loadUsers = async () => {
         try {
           const result = await axios.get("http://localhost:8000/getPost");
           setPosts(result.data.resu);
           localStorage.setItem("posts",JSON.stringify(result.data.resu));
-          setLoading(false);
+          setLoading({...loading,"a":false});
+        } catch (error) {
+          console.error(error);
+        }
+        
+      };
+      const loadFriends = async () => {
+        try {
+          const result = await axios.get("http://localhost:8000/getFriend");
+          
+          localStorage.setItem("Friends",JSON.stringify(result.data.resu));
+          setLoading({...loading,"e":false});
+          console.log(result.data.resu);
         } catch (error) {
           console.error(error);
         }
@@ -29,8 +48,8 @@ export default function Home() {
         try {
           const result = await axios.get("http://localhost:8000/getUsers");
           setPosts(result.data.resu);
-          console.log(result.data.resu);
           localStorage.setItem("users",JSON.stringify(result.data.resu));
+          setLoading({...loading,"b":false});
         } catch (error) {
           console.error(error);
         }
@@ -41,6 +60,7 @@ export default function Home() {
           const result = await axios.get("http://localhost:8000/getStories");
           // setStories(result.data.resu);
           localStorage.setItem("stories",JSON.stringify(result.data.resu));
+          setLoading({...loading,"c":false});
           
         } catch (error) {
           console.error(error);
@@ -52,6 +72,8 @@ export default function Home() {
          try {
             const result = await axios.get("http://localhost:8000/comments");
             setComments(result.data.resu);
+          setLoading({...loading,"d":false});
+
           } catch (error) {
             console.error(error);
           }
@@ -73,9 +95,7 @@ export default function Home() {
         document.getElementById(id).style.display="none";
       }
   }
-      if (loading) {
-        return <div>Loading...</div>;
-      }
+      
 
       const addComment=(id)=>{
         let co=document.getElementById(`comment${id}`).value;
@@ -89,7 +109,10 @@ export default function Home() {
         loadComments();
     }      
 
-
+      if (loading.a && loading.b && loading.c && loading.d && loading.e) {
+        return <div>Loading...</div>;
+      }
+      else{
     return (
 
         <div id="home" >
@@ -134,5 +157,5 @@ export default function Home() {
         </div>
     )
 
-}
+}}
 

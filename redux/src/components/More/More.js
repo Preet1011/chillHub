@@ -9,9 +9,8 @@ const More = () => {
   }
   return (
     <div id='morecont'>
-        <div className='morebut'> Settings </div>
-        <div className='morebut'> report problem </div>
-        <div className='morebut'> accounts </div>
+        <div className='morebut'><a  href='profile'> Settings </a></div>
+        <a  href='profile'><div className='morebut'> accounts </div></a>
         <div className='morebut' onClick={Logout}> Logout </div>
     
     </div>
