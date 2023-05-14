@@ -12,7 +12,9 @@ export default function Home() {
       b:true,
       c:true,
       d:true,
-      e:true
+      e:true,
+      f:true,
+      g:true
     });
     useEffect(() => {
         loadUsers();
@@ -85,6 +87,7 @@ export default function Home() {
             user_id:data.user_id
         };
         axios.post("http://localhost:8000/like",a).then(res=>console.log(res.data));
+        setLoading({...loading,"g":false});
         loadUsers();
     }
     const comment=async(id)=>{ 
@@ -105,11 +108,12 @@ export default function Home() {
             comment:co
         };
         axios.post("http://localhost:8000/addComment",a).then(res=>console.log(res.data));
+        setLoading({...loading,"f":false});
         loadUsers();
         loadComments();
     }      
 
-      if (loading.a && loading.b && loading.c && loading.d && loading.e) {
+      if (loading.a && loading.b && loading.c && loading.d && loading.e && loading.f && loading.g) {
         return <div>Loading...</div>;
       }
       else{

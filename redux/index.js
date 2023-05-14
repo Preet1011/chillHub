@@ -255,7 +255,26 @@ app.post("/cancel",(req,res)=>{
     })
 })
 
-
+app.post("/addMsg",(req,res)=>{
+    const {user_id1,user_id2,chats}=req.body;
+    let q="insert into chats (user_id1,user_id2,chat) values ('"+user_id1+"','"+user_id2+"','"+chats+"')";
+    let q1="select user_id1,user_id2,chat,created_at,name from chats inner join users on chats.user_id1=users.user_id order by created_at";
+    conn.query(q,(err,resu)=>{
+        if(err)throw err;
+        conn.query(q1,(err,resu)=>{
+            if(err)throw err;
+            res.send({resu});
+        })
+    })
+    
+})
+app.get("/getMsg",(req,res)=>{
+    let q1="select user_id1,user_id2,chat,created_at,name from chats inner join users on chats.user_id1=users.user_id order by created_at";
+    conn.query(q1,(err,resu)=>{
+        if(err)throw err;
+        res.send({resu});
+    })
+})
 
 
 

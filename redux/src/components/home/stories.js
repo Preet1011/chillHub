@@ -63,7 +63,7 @@ useEffect(()=>{
           <img src='https://png.pngtree.com/png-clipart/20190516/original/pngtree-button-plus-icon-png-image_3566853.jpg'></img>
         </div>
         
-        {
+        {st?
           st.map(d=>(
             <div id="div_st">
               <div id={d.story_id} className='story_containers'>
@@ -75,7 +75,7 @@ useEffect(()=>{
                   <img src={d.story} ></img>
               </div>
             </div>
-          ))
+          )):null
         }
         
     </div>

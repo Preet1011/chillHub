@@ -16,7 +16,7 @@ export default function Navbar() {
   function Notificatio(){
    
       let a=document.getElementById("whole").style.display;
-      if(a=="none"){
+      if(a==="none"){
         document.getElementById("whole").style.display="inline-block";
         document.getElementById("morecont").style.display="none";
         document.getElementById("searchwhole").style.display="none";
@@ -29,7 +29,7 @@ export default function Navbar() {
   function Searc(){
    
     let a=document.getElementById("searchwhole").style.display;
-    if(a=="none"){
+    if(a==="none"){
       document.getElementById("searchwhole").style.display="inline-block";
       document.getElementById("whole").style.display="none";
       document.getElementById("morecont").style.display="none";
@@ -42,7 +42,7 @@ export default function Navbar() {
   function Poss(){
    
       let a=document.getElementById("post_cointainer").style.display;
-      if(a=="none"){
+      if(a==="none"){
         document.getElementById("post_cointainer").style.display="inline-block";
         document.getElementById("whole").style.display="none";
         document.getElementById("morecont").style.display="none";
@@ -56,7 +56,7 @@ export default function Navbar() {
     function Mor(){
    
       let a=document.getElementById("morecont").style.display;
-      if(a=="none"){
+      if(a==="none"){
         document.getElementById("morecont").style.display="inline-block";
         document.getElementById("whole").style.display="none";
         document.getElementById("searchwhole").style.display="none";

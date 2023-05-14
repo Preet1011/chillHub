@@ -10,7 +10,13 @@ const Search = () => {
       let data1=JSON.parse(localStorage.getItem("loginUser"));
       function filterUserNames(searchTerm) {
         const regex = new RegExp(searchTerm, "i");
-        return data.filter((name) => regex.test(name.username+name.name));
+        if(data){
+          return data.filter((name) => regex.test(name.username+name.name));
+        }
+        else{
+          return {};
+        }
+        
       }  
       
   const onValChange=()=>{
@@ -44,6 +50,21 @@ const Search = () => {
       return false;
     }
   }
+  const isAccepted=(id)=>{
+    let a=0;
+    data3.map(i=>{
+      if(id===i.user_id2 && i.active===1 && data1.user_id===i.user_id1 && i.accept===1){
+        a=1;
+      }
+      
+    })
+    if(a===0){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
   return (
     <div id='searchwhole'>
     
@@ -56,7 +77,7 @@ const Search = () => {
                 <div id="ids">
                     <img id="searc_img" src={s.profilePic}></img>
                     <h4>{s.username}</h4>
-                    {isRequest(s.user_id)?<button id='search_follow' onClick={()=>follow(s.user_id)} >follow</button>:<button id='search_follow' onClick={()=>unfollow(s.user_id)} >Unfollow</button>}
+                    {isRequest(s.user_id)?<button id='search_follow' onClick={()=>follow(s.user_id)} >follow</button>:isAccepted(s.user_id)?<button id='search_follow' onClick={()=>unfollow(s.user_id)} >Unfollow</button>:<button id='search_follow' disabled >Friends</button>}
                 </div>
             ))
             
