@@ -12,7 +12,7 @@ import Post from './components/Post/Post';
 import Edit from './components/Edit/Edit.js';
 import Upload from './components/upload/Upload';
 import More from './components/More/More';
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react'; 
 function App() {
   let use=localStorage.getItem("loginUser");
   function Body(){
@@ -45,7 +45,7 @@ function App() {
           <span ><span id="chill">Chill</span><span id="hu1">Hub</span></span>
         </div>
         <div id="loading1">
-          <h3>from <br></br> <span id="head">Montu</span></h3>
+          <h3>from <br></br> <span id="head">Preet</span></h3>
         </div>
       </div>
     )

@@ -12,7 +12,7 @@ const Notices = () => {
         </ul>
       </div>
 
-      <div id='footer'>DEVELOPED BY TEAM <div id='team'>【𝓗𝓟𝓜𝓟】</div>
+      <div id='footer'>DEVELOPED BY TEAM <div id='team'>【PP】</div>
       
       </div>
 
